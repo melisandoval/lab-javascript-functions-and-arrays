@@ -15,19 +15,25 @@ const words = [
 ];
 
 function findLongestWord(arr) {
-  if (arr.length >= 1) {
+  if (arr.length === 0) {
+    return null;
+  } else {
     let sortedArr = arr.sort(
       (currentElement, nextElement) =>
         nextElement.length - currentElement.length
     );
     return sortedArr[0];
-  } else return null;
+  }
 }
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(arrOfNums) {
+  if (arrOfNums.length === 0) {
+    return 0;
+  } else return arrOfNums.reduce((a, b) => a + b);
+}
 
 // Iteration #3.1 Bonus:
 function sum() {}
