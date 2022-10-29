@@ -36,7 +36,31 @@ function sumNumbers(arrOfNums) {
 }
 
 // Iteration #3.1 Bonus:
-function sum() {}
+
+function sum(arr) {
+  let sum = 0;
+
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += checkValue(arr[i]);
+  }
+
+  return sum;
+}
+
+function checkValue(value) {
+  if (typeof value === "string") {
+    return value.length;
+  }
+  if (typeof value === "object") {
+    throw new Error("Unsupported data type sir or ma'am");
+  }
+
+  return value;
+}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
