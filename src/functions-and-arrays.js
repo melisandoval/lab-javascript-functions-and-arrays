@@ -114,21 +114,22 @@ function convertValue(value) {
 }
 
 // Iteration #5: Unique arrays
-const wordsUnique = [
-  "crab",
-  "poison",
-  "contagious",
-  "simple",
-  "bring",
-  "sharp",
-  "playground",
-  "poison",
-  "communion",
-  "simple",
-  "bring",
-];
 
-function uniquifyArray() {}
+function uniquifyArray(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!newArr.includes(arr[i])) {
+      newArr.push(arr[i]);
+    }
+  }
+
+  return newArr;
+}
 
 // Iteration #6: Find elements
 const wordsFind = [
