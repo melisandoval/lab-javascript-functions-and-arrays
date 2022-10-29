@@ -17,13 +17,13 @@ const words = [
 function findLongestWord(arr) {
   if (arr.length === 0) {
     return null;
-  } else {
-    let sortedArr = arr.sort(
-      (currentElement, nextElement) =>
-        nextElement.length - currentElement.length
-    );
-    return sortedArr[0];
   }
+
+  let sortedArr = arr.sort(
+    (currentElement, nextElement) => nextElement.length - currentElement.length
+  );
+
+  return sortedArr[0];
 }
 
 // Iteration #3: Calculate the sum
@@ -32,7 +32,9 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 function sumNumbers(arrOfNums) {
   if (arrOfNums.length === 0) {
     return 0;
-  } else return arrOfNums.reduce((a, b) => a + b);
+  }
+
+  return arrOfNums.reduce((a, b) => a + b);
 }
 
 // Iteration #3.1 Bonus:
@@ -66,7 +68,13 @@ function checkValue(value) {
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  return arr.reduce((a, b) => a + b, 0) / arr.length;
+}
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -82,10 +90,54 @@ const wordsArr = [
   "palace",
 ];
 
-function averageWordLength() {}
+function averageWordLength(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i].length;
+  }
+
+  return sum / arr.length;
+}
 
 // Bonus - Iteration #4.1
-function avg() {}
+
+const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
+// should return: 5.7
+
+function avg(arr) {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += convertValue(arr[i]);
+  }
+
+  return sum / arr.length;
+}
+
+function convertValue(value) {
+  if (typeof value === "string") {
+    return value.length;
+  }
+
+  if (value === true) {
+    return 1;
+  }
+
+  if (value === false) {
+    return 0;
+  }
+
+  return value;
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
